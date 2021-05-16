@@ -1,9 +1,6 @@
-var url = "https://covid19-japan-web-api.vercel.app/api/v1/prefectures";
-
 export async function getData() {
-    const response = await fetch(
-        `https://covid19-japan-web-api.vercel.app/api/v1/prefectures`
-    );
+    const url = "https://covid19-japan-web-api.vercel.app/api/v1/prefectures"
+    const response = await fetch(url);
     const data = await response.json();
     return data;
 }
