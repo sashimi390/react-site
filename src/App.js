@@ -32,6 +32,7 @@ function Table(props) {
                     <th>PCR検査数</th>
                     <th>累計感染者数</th>
                     <th>死者数</th>
+                    <th>データ更新日</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +43,7 @@ function Table(props) {
                             <td>{data.pcr}件</td>
                             <td>{data.cases}人</td>
                             <td>{data.deaths}人</td>
+                            <td>{data.last_updated.cases_date}</td>
                         </tr>
                     );
                 })}
@@ -109,13 +111,13 @@ function Main() {
         <main>
             <section className="section">
                 <div className="container">
-                    <form onFormSubmit={reloadData} datas={datas} />
+                    {/* <Form onFormSubmit={reloadData} datas={datas} /> */}
                 </div>
             </section>
             <section className="section">
                 <div className="container">
                     <Chart data={datas} />
-                    <Form datas={datas} />
+                    <Form onFormSubmit={reloadData} datas={datas} />
                     <Table datas={table_datas} />
                 </div>
             </section>
