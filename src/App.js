@@ -31,6 +31,7 @@ function Table(props) {
                     <th>都道府県</th>
                     <th>PCR検査数</th>
                     <th>累計感染者数</th>
+                    <th>重症者数</th>
                     <th>死者数</th>
                     <th>データ更新日</th>
                 </tr>
@@ -42,6 +43,7 @@ function Table(props) {
                             <td>{data.name_ja}</td>
                             <td>{data.pcr}件</td>
                             <td>{data.cases}人</td>
+                            <td>{data.severe}人</td>
                             <td>{data.deaths}人</td>
                             <td>{data.last_updated.cases_date}</td>
                         </tr>
@@ -66,7 +68,7 @@ function Form(props) {
             <form onSubmit={handleSubmit}>
                 <div className="field has-addons" >
                     <div className="control is-expanded" >
-                        <div className="select is-fullwidth" >
+                        <div className="select is-fullwidth is-link" >
                             <select name="breed" defaultValue="北海道" >
                                 {datas.map(data => {
                                     return (
@@ -78,7 +80,7 @@ function Form(props) {
                         </div >
                     </div >
                     <div className="control" >
-                        <button type="submit" className="button is-dark" >
+                        <button type="submit" className="button is-link is-focused is-rounded" >
                             Reload</button >
                     </div >
                 </div >

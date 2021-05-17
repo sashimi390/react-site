@@ -23,16 +23,16 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => {
                 colors={{ scheme: 'nivo' }}
                 defs={[
                     {
-                        id: 'dots',
+                        id: 'deaths',
                         type: 'patternDots',
                         background: 'inherit',
-                        color: '#38bcb2',
+                        color: '#ff63c9',
                         size: 4,
                         padding: 1,
                         stagger: true
                     },
                     {
-                        id: 'lines',
+                        id: 'cases',
                         type: 'patternLines',
                         background: 'inherit',
                         color: '#eed312',
