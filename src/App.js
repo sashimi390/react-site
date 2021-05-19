@@ -132,7 +132,7 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="content has-text-centered">
-                <p>datas are retrieved from COVID-19</p>
+                <p>data are retrieved from COVID-19</p>
                 <p>
                     <a href="https://covid19-japan-web-api.vercel.app/api/v1/prefectures">Donate to COVID-19 API</a>
                 </p>
