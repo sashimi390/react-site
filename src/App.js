@@ -19,7 +19,7 @@ function Header() {
     );
 }
 
-function Table(props) {
+function Table(props) {//表の表示
     const { datas } = props;
     if (datas == null)
         return <Loading />;
@@ -28,7 +28,7 @@ function Table(props) {
             <caption>日本のコロナ</caption>
             <thead>
                 <tr>
-                    <th>都道府県</th>
+                    <th>都道府県</th>{/* 横 */}
                     <th>PCR検査数</th>
                     <th>累計感染者数</th>
                     <th>重症者数</th>
@@ -37,6 +37,7 @@ function Table(props) {
                 </tr>
             </thead>
             <tbody>
+
                 {datas.map(data => {
                     return (
                         <tr key={data.id}>

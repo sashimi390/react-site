@@ -85,7 +85,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => {
                         justify: false,
                         translateX: 120,
                         translateY: 0,
-                        itemsSpacing: 2,
+                        itemsSpacing: 10,
                         itemWidth: 100,
                         itemHeight: 20,
                         itemDirection: 'left-to-right',
