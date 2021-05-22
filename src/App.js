@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getData } from "./api";
 import Chart from "./Chart";//node.jsでは拡張子いらない(.jsとか)
+import Death from "./Death";//node.jsでは拡張子いらない(.jsとか)
 
 function Loading() {
     return <p>Loading...</p>;
@@ -66,10 +67,11 @@ function Form(props) {
     }
     return (
         <div>
+            <label class="label">都道府県を絞る</label>
             <form onSubmit={handleSubmit}>
                 <div className="field has-addons" >
-                    <div className="control is-expanded" >
-                        <div className="select is-fullwidth is-link" >
+                    <div className="control is-expanded " >
+                        <div className="select  is-link " >
                             <select name="breed" defaultValue="北海道" >
                                 {datas.map(data => {
                                     return (
@@ -80,10 +82,10 @@ function Form(props) {
                             </select >
                         </div >
                     </div >
-                    <div className="control" >
-                        <button type="submit" className="button is-link is-focused is-rounded" >
-                            Reload</button >
-                    </div >
+                </div >
+                <div className="control" >
+                    <button type="submit" className="button is-link is-focused is-rounded" >
+                        Reload</button >
                 </div >
             </form >
         </div >
@@ -114,12 +116,18 @@ function Main() {
         <main>
             <section className="section">
                 <div className="container">
-                    {/* <Form onFormSubmit={reloadData} datas={datas} /> */}
+                    <h2 class="subtitle is-">感染者数が多い都道府県順グラフ</h2>
+                    <Chart data={datas} />
+
+                </div>
+                <div className="container">
+                    <h2 class="subtitle">死者数</h2>
+                    <Death data={datas} />
+
                 </div>
             </section>
             <section className="section">
                 <div className="container">
-                    <Chart data={datas} />
                     <Form onFormSubmit={reloadData} datas={datas} />
                     <Table datas={table_datas} />
                 </div>

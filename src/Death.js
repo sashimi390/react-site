@@ -7,23 +7,23 @@ import { ResponsiveBar } from '@nivo/bar'
 // website examples showcase many properties,
 // you'll often use just a few of them.
 
-const MyResponsiveBar = ({ data /* see data tab */ }) => {
+const MyMyResponsiveBar = ({ data /* see data tab */ }) => {
     if (data == null)
         return "";
     return (
         <div style={{ width: "100%", height: "500px" }}>
             <ResponsiveBar
                 data={data}
-                keys={['cases']}
+                keys={['deaths']}
                 indexBy="name_ja"
                 margin={{ top: 0, right: 80, bottom: 80, left: 80 }}
                 padding={0.1}
                 valueScale={{ type: 'linear' }}
                 indexScale={{ type: 'band', round: true }}
-                colors={{ scheme: 'set1' }}
+                colors={{ scheme: 'category10' }}
                 defs={[
                     {
-                        id: 'cases',
+                        id: 'deaths',
                         type: 'patternLines',
                         background: 'inherit',
                         color: '#eed312',
@@ -55,7 +55,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => {
                     tickSize: 12,
                     tickPadding: 0,
                     tickRotation: 30,
-                    legend: '感染者数',
+                    legend: '死者数',
                     legendPosition: 'middle',
                     legendOffset: -60
                 }}
@@ -94,4 +94,4 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => {
     );
 
 }
-export default MyResponsiveBar;
+export default MyMyResponsiveBar;
